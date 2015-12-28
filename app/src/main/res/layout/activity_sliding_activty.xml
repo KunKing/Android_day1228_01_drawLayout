@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slidingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    tools:context=".activities.SlidingActivity">
+
+    <!-- 把中间的布局 拉走，显示菜单 主布局覆盖菜单
+    所以先写 菜单 在写布局 让菜单覆盖布局
+
+    5.0 之后  design 的时候 有 z 轴。需要主布局 稍微高一些 5dp
+    -->
+    <LinearLayout
+        android:id="@+id/menu_sliding"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|left"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="1234567890"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content_sliding"
+        android:background="#fff"
+        android:elevation="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textColor="#000" />
+    </FrameLayout>
+
+
+
+</android.support.v4.widget.SlidingPaneLayout>

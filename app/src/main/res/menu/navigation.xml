@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 做成单选项 -->
+    <group android:checkableBehavior="single">
+        <!-- 默认选中 -->
+        <item
+            android:id="@+id/item_1"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="第一项" />
+        <item
+            android:id="@+id/item_2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="第二项" />
+        <item
+            android:id="@+id/item_3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="第三项" />
+        <item
+            android:id="@+id/item_4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="第四项 退出" />
+    </group>
+
+    <!--下面的小分组-->
+
+    <item android:title="小分组">
+        <menu>
+            <item android:id="@+id/group_1" android:title="设置"/>
+            <item android:id="@+id/group_2" android:title="我的"/>
+            <item android:id="@+id/group_3" android:title="退出"/>
+        </menu>
+
+    </item>
+
+</menu>

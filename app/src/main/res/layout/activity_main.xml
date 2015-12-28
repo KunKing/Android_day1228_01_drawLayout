@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.edu.android_day1228_01_drawlayout.MainActivity">
+
+    <!--    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                android:textColor="#000" />
+        </FrameLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 选项卡 多的话用 app:tabMode="scrollable" 少的话用 app:tabMode="fixed" 平均分配 -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            app:tabTextColor="#000"
+            app:tabSelectedTextColor="#f00"
+            app:tabMode="scrollable"
+            app:tabBackground="@color/colorAccent"
+            app:tabIndicatorColor="#0f0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <!-- v4 包没有定自定义的xml文件，所以编译器不会提示对应的属性，
+    在别的控件中写出来，之间copy过来 -->
+    <!--    <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|left"
+            android:background="@android:color/holo_blue_light"
+            android:orientation="vertical">
+        </LinearLayout>-->
+
+    <!-- 导航控件  app:itemTextAppearance="?android:textAppearanceLarge" style
+        配合 menu
+     -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|left"
+        app:headerLayout="@layout/menu_header"
+        app:itemTextAppearance="?android:textAppearanceLarge"
+        app:menu="@menu/navigation"></android.support.design.widget.NavigationView>
+    <!-- 注意 headLayout-->
+</android.support.v4.widget.DrawerLayout>
+
